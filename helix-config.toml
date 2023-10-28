@@ -1,0 +1,59 @@
+
+
+# theme = "gruvbox_dark_hard"
+theme = "ayu_mirage"
+
+
+[editor]
+auto-completion = true
+color-modes = true
+bufferline = "always"
+scroll-lines = 1
+scrolloff = 999 # 15
+cursorline = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "bar"
+select = "bar"
+
+[editor.statusline]
+center = ["version-control"]
+
+[editor.file-picker]
+hidden = false
+
+# [editor.soft-wrap]
+# enable = true
+# max-wrap = 25
+# max-indent-retain = 0
+# wrap-indicator = "\t↪ "
+
+
+# MARK: Keys
+
+# Smooth scrolling
+# src: https://github.com/helix-editor/helix/issues/1671#issuecomment-1384747972
+[keys.normal]
+C-e = "scroll_down"
+C-y = "scroll_up"
+# C-e = ["scroll_down", "move_line_down"]
+# C-y = ["scroll_up", "move_line_up"]
+
+
+# "w" = ["move_prev_word_start", "move_next_word_end"]
+
+# Save to register when entering visual mode
+# allows for immediate `n` use a-la Sublime Cmd+D
+"v" = ["select_mode", "search_selection"]
+
+# When navigating via TS, we always want the cursor
+# at the top, so the entire code block  (or at least, 
+# tne top bit of it) is shown.
+# "A-n" = ["select_next_sibling", "flip_selections"]
+# "A-p" = ["select_prev_sibling", "flip_selections"]
+
+[keys.insert]
+"[" = { "]" = ["normal_mode", ":write"]}
+"]" = { "[" = ["normal_mode", ":write"]}
+
