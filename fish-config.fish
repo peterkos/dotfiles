@@ -25,8 +25,6 @@ alias c "clear"
 alias tree "tree -C"
 alias path "echo $PATH | tr ':' '\n' | bat"
 alias fpath "echo $fish_user_paths | tr ' ' '\n' | bat"
-alias rf "source ~/.config/fish/config.fish"
-alias ef "$EDITOR ~/.config/fish/config.fish"
 
 alias h "history"
 alias hg "h | grep" # bye bye zucky
@@ -56,13 +54,15 @@ end
 
 alias tower "gittower"
 alias t "tower"
-alias rfc "rm -rf .parcel-cache"
+alias blink "bombadil link"
+alias blinkrf "blink && rf"
 
 alias zp "zola serve"
 alias zpd "zp --drafts"
 alias r "railway"
 alias rr "railway run"
 
+alias rfc "rm -rf .parcel-cache"
 alias rpc "rm -rf .parcel-cache dist"
 alias ns "rpc && npm start"
 alias nd "npm run dev"
@@ -117,50 +117,6 @@ source $HOME/.cargo/env
 
 
 
-# MARK: Ruby
-
-alias bi "bundle install"
-
-# Init rbenv, same as `rbenv init`
-status --is-interactive; and rbenv init - fish | source
-
-
-# I should need one
-# fish_add_path /usr/local/opt/ruby/bin
-# fish_add_path /usr/local/lib/ruby/gems/3.0.0/bin
-# fish_add_path /usr/local/lib/ruby/gems/2.6.6/bin
-# fish_add_path /Users/peterkos/.rbenv/versions/2.6.6/lib/ruby/2.6.0/bin
-# fish_add_path $HOME/.rbenv/shims
-
-# Uhhhhhhh.... I don't think I need these.
-# export SDK_ROOT="$HOME/Desktop/MacOSX10.12.sdk"
-# export SDKROOT=(xcrun --sdk macosx --show-sdk-path)
-# export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
-
-# Previously needed all of these so `rbenv` could install openssl@1.1, but
-# brew was able to do it easily :)
-# fish_add_path /usr/local/opt/openssl@1.1/bin
-# set -gx LDFLAGS "-L/usr/local/opt/openssl@1.1/lib"
-# set -gx CPPFLAGS "-I/usr/local/opt/openssl@1.1/include"
-# set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl@1.1/lib/pkgconfig"
-
-# Complains unless I do it automatically...
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=(brew --prefix openssl@1.1)"
-# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
-
-# fish_add_path /usr/local/opt/llvm/bin
-# set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
-# set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
-
-
-
-# MARK: C/C++
-
-alias cm "clear && make && ./main"
-
-fish_add_path $HOME/Downloads/gmakemake/bin
-
-
 # MARK: Fish
 
 # ugh. src: https://github.com/fish-shell/fish-shell/issues/8604
@@ -180,6 +136,8 @@ end
 
 
 # MARK: Shell
+alias ef "$EDITOR ~/.dotfiles/fish-config.fish"
+alias rf "source ~/.config/fish/config.fish"
 
 setenv EDITOR hx
 starship init fish | source
@@ -231,3 +189,46 @@ function "datefix"
     end
 end
 
+
+
+# MARK: Ruby
+alias bi "bundle install"
+
+# Init rbenv, same as `rbenv init`
+status --is-interactive; and rbenv init - fish | source
+
+
+# I should need one
+# fish_add_path /usr/local/opt/ruby/bin
+# fish_add_path /usr/local/lib/ruby/gems/3.0.0/bin
+# fish_add_path /usr/local/lib/ruby/gems/2.6.6/bin
+# fish_add_path /Users/peterkos/.rbenv/versions/2.6.6/lib/ruby/2.6.0/bin
+# fish_add_path $HOME/.rbenv/shims
+
+# Uhhhhhhh.... I don't think I need these.
+# export SDK_ROOT="$HOME/Desktop/MacOSX10.12.sdk"
+# export SDKROOT=(xcrun --sdk macosx --show-sdk-path)
+# export OPENSSL_ROOT_DIR=/usr/local/opt/openssl
+
+# Previously needed all of these so `rbenv` could install openssl@1.1, but
+# brew was able to do it easily :)
+# fish_add_path /usr/local/opt/openssl@1.1/bin
+# set -gx LDFLAGS "-L/usr/local/opt/openssl@1.1/lib"
+# set -gx CPPFLAGS "-I/usr/local/opt/openssl@1.1/include"
+# set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+# Complains unless I do it automatically...
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=(brew --prefix openssl@1.1)"
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1"
+
+# fish_add_path /usr/local/opt/llvm/bin
+# set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
+# set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
+
+
+
+# MARK: C/C++
+
+alias cm "clear && make && ./main"
+
+fish_add_path $HOME/Downloads/gmakemake/bin
