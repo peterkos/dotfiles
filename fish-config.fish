@@ -23,7 +23,7 @@ alias lsa "ls -a"
 alias lsal "ls -al"
 alias c "clear"
 alias tree "tree -C"
-alias path "echo $PATH | tr ':' '\n' | bat"
+alias ppath "echo $PATH | tr ':' '\n' | bat"
 alias fpath "echo $fish_user_paths | tr ' ' '\n' | bat"
 
 alias h "history"
@@ -36,6 +36,7 @@ alias s "sub ."
 
 alias gs "git status"
 alias gd "git diff"
+alias gds "gd --staged"
 alias gc "git commit"
 alias ga "git add"
 alias gp "git pull"
@@ -92,6 +93,7 @@ set --universal nvm_default_version latest
 # MARK: directories
 
 alias g "cd ~/Code/GitHub/ && c"
+alias d "cd ~/.dotfiles"
 alias br "cd ~/Code/GitHub/brickhack.io && c"
 alias bh "br"
 alias he "cd ~/Code/GitHub/hackathon-manager && c"
