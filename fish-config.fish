@@ -66,6 +66,7 @@ alias zpd "zp --drafts"
 alias r "railway"
 alias rr "railway run"
 
+alias ni "npm install"
 alias rfc "rm -rf .parcel-cache"
 alias rpc "rm -rf .parcel-cache dist"
 alias ns "rpc && npm start"
@@ -103,6 +104,13 @@ alias hef "he && cd frontend"
 # MARK: Config files
 
 alias zconf "$EDITOR ~/.config/zellij/config.kdl"
+
+# MARK: Swift
+
+alias sb "swift build"
+alias sr "swift run"
+
+export TOOLCHAIN="/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2023-10-04-a.xctoolchain"
 
 
 # MARK: Rust
