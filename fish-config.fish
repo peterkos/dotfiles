@@ -61,7 +61,7 @@ alias t "tower"
 alias blink "bombadil link"
 alias blinkrf "blink && rf"
 
-alias zp "zola serve"
+alias zp "zola serve -f"
 alias zpd "zp --drafts"
 alias r "railway"
 alias rr "railway run"
@@ -109,8 +109,10 @@ alias zconf "$EDITOR ~/.config/zellij/config.kdl"
 
 alias sb "swift build"
 alias sr "swift run"
+alias csb "c && sb"
+alias csr "c && sr"
 
-export TOOLCHAIN="/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2023-10-04-a.xctoolchain"
+# export TOOLCHAIN="/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2023-10-04-a.xctoolchain"
 
 
 # MARK: Rust
@@ -210,8 +212,8 @@ alias bi "bundle install"
 # Init rbenv, same as `rbenv init`
 status --is-interactive; and rbenv init - fish | source
 
+fish_add_path /usr/local/lib/ruby/gems/3.2.0/bin
 
-# I should need one
 # fish_add_path /usr/local/opt/ruby/bin
 # fish_add_path /usr/local/lib/ruby/gems/3.0.0/bin
 # fish_add_path /usr/local/lib/ruby/gems/2.6.6/bin
