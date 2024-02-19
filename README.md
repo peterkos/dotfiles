@@ -18,5 +18,14 @@ bombadil install ~/.dotfiles
 ## Usage
 
 ```sh
-bombadil link # Refresh files
+# Setup
+bombadil link -p all
+
+# Usage: general
+$EDITOR [program...]
+rd # re-runs the above setup command
+
+# Usage: fish (common)
+ef
+rd
 ```

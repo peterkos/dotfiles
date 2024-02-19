@@ -58,8 +58,7 @@ end
 
 alias tower "gittower"
 alias t "tower"
-alias blink "bombadil link"
-alias blinkrf "blink && rf"
+alias rd "bombadil link -p all"
 
 alias zp "zola serve -f -p 1234"
 alias zpd "zp --drafts"
@@ -152,10 +151,10 @@ end
 
 
 # MARK: Shell
-alias ef "$EDITOR ~/.dotfiles/fish-config.fish"
-alias rf "source ~/.config/fish/config.fish"
+alias ef "$EDITOR ~/.dotfiles/configs/fish/fish-config.fish"
+alias rf "rd; and source ~/.config/fish/config.fish"
 
-setenv EDITOR hx
+setenv EDITOR sub
 starship init fish | source
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
