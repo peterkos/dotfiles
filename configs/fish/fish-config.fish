@@ -61,7 +61,7 @@ alias t "tower"
 alias blink "bombadil link"
 alias blinkrf "blink && rf"
 
-alias zp "zola serve -f"
+alias zp "zola serve -f -p 1234"
 alias zpd "zp --drafts"
 alias r "railway"
 alias rr "railway run"
@@ -111,6 +111,7 @@ alias sb "swift build"
 alias sr "swift run"
 alias csb "c && sb"
 alias csr "c && sr"
+alias sfmt "swiftformat ."
 
 # export TOOLCHAIN="/Library/Developer/Toolchains/swift-DEVELOPMENT-SNAPSHOT-2023-10-04-a.xctoolchain"
 

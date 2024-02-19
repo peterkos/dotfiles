@@ -1,7 +1,17 @@
-# Path to your dotfiles relative to your $HOME directory
 dotfiles_dir = ".dotfiles"
 
-[settings.dots]
+[settings]
+vars = ["vars.toml"]
 
-fish = { source = "fish-config.fish", target = ".config/fish/config.fish" }
-helix = { source = "helix-config.toml", target = ".config/helix/config.toml" }
+[profiles.all]
+extra_profiles = ["fish", "helix", "sublime"]
+
+
+[[import]]
+path = "configs/fish/config.toml"
+
+[[import]]
+path = "configs/helix/config.toml"
+
+[[import]]
+path = "configs/sublime/config.toml"

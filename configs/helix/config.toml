@@ -1,0 +1,3 @@
+[profiles.helix.dots.helix]
+source = "configs/helix/helix-config.toml"
+target = ".config/helix/config.toml"
