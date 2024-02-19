@@ -125,7 +125,8 @@ alias cn "cargo new"
 alias ct "cargo test"
 alias cts "ct -- --test-threads 1"
 
-source $HOME/.cargo/env
+# Might not need? unsure.
+# source $HOME/.cargo/env
 
 # https://github.com/rust-analyzer/rust-analyzer/issues/2653#issuecomment-628656084
 # export CARGO="~/.cargo/bin"
@@ -157,11 +158,6 @@ alias rf "rd; and source ~/.config/fish/config.fish"
 setenv EDITOR sub
 starship init fish | source
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
-
-
-
-# MARK: Java
-export JAVA_HOME=(/usr/libexec/java_home)
 
 
 
