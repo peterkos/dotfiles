@@ -59,6 +59,7 @@ end
 alias tower "gittower"
 alias t "tower"
 alias rd "bombadil link -p all"
+alias sub "subl"
 
 alias zp "zola serve -f -p 1234"
 alias zpd "zp --drafts"
@@ -80,8 +81,8 @@ alias cdb "clear && db"
 alias k "kubectl"
 alias kga "kubectl get all"
 
-fish_add_path "/Users/peterkos/Code/GitHub/gitlab-cli/bin"
 fish_add_path /Users/peterkos/.spicetify
+fish_add_path /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
 
 thefuck --alias | source
 
