@@ -17,16 +17,16 @@
 
 alias cl "osascript -e 'tell application \"System Events\" to keystroke \"k\" using command down'"
 alias cls "clear && exa"
-alias ls "exa"
+alias ls exa
 alias lsl "ls -l --no-user --no-permissions --no-filesize --no-time"
 alias lsa "ls -a"
 alias lsal "ls -al"
-alias c "clear"
+alias c clear
 alias tree "tree -C"
 alias ppath "echo $PATH | tr ':' '\n' | bat"
 alias fpath "echo $fish_user_paths | tr ' ' '\n' | bat"
 
-alias h "history"
+alias h history
 alias hg "h | grep" # bye bye zucky
 
 alias o "open ."
@@ -56,14 +56,14 @@ end
 
 # MARK: third party
 
-alias tower "gittower"
-alias t "tower"
+alias tower gittower
+alias t tower
 alias rd "bombadil link -p all"
-alias sub "subl"
+alias sub subl
 
-alias zp "zola serve -f -p 1234"
+alias zp "zola serve -p 1234"
 alias zpd "zp --drafts"
-alias r "railway"
+alias r railway
 alias rr "railway run"
 
 alias ni "npm install"
@@ -78,11 +78,12 @@ alias dr "dotnet run"
 alias cdr "c && dr"
 alias cdb "clear && db"
 
-alias k "kubectl"
+alias k kubectl
 alias kga "kubectl get all"
 
 fish_add_path /Users/peterkos/.spicetify
 fish_add_path /Applications/Sublime\ Text.app/Contents/SharedSupport/bin
+fish_add_path ~/.bun/bin
 
 thefuck --alias | source
 
@@ -96,9 +97,10 @@ set --universal nvm_default_version latest
 alias g "cd ~/Code/GitHub/ && c"
 alias d "cd ~/.dotfiles"
 alias br "cd ~/Code/GitHub/brickhack.io && c"
-alias bh "br"
+alias bh br
 alias he "cd ~/Code/GitHub/hackathon-manager && c"
 alias hef "he && cd frontend"
+alias cab "cd ~/Code/GitHub/=peterkos/=cabinette/cabinette"
 
 
 # MARK: Config files
@@ -156,11 +158,13 @@ end
 alias ef "$EDITOR ~/.dotfiles/configs/fish/fish-config.fish"
 alias rf "rd; and source ~/.config/fish/config.fish"
 
-setenv EDITOR sub
+setenv EDITOR hx
 starship init fish | source
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+test -e {$HOME}/.iterm2_shell_integration.fish; and source {$HOME}/.iterm2_shell_integration.fish
+~/.local/bin/mise activate fish | source
 
-
+setenv HOMEBREW_NO_INSTALL_FROM_API 1
+setenv DOTNET_CLI_TELEMETRY_OPTOUT 1
 
 # MARK: Music
 fish_add_path /Users/peterkos/Music/Audio/Discography/scripts
@@ -182,7 +186,7 @@ alias wip "cd /Users/peterkos/Music/Audio/Discography/WIP\ Music"
 #       wow_song v1.wav @ 1/1/20 <-|
 #       wow_song v2.wav @ 1/2/20
 # ```
-function "datefix"
+function datefix
     set maxDirNameLen (math (ls -l --no-permissions --no-filesize  --no-time --no-user | awk '{ print length }' | sort -n | tail -1) + 1)
     for dir in */
         cd $dir
