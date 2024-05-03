@@ -156,6 +156,7 @@ end
 
 # MARK: Shell
 alias ef "$EDITOR ~/.dotfiles/configs/fish/fish-config.fish"
+alias eh "$EDITOR ~/.dotfiles/configs/helix/helix-config.toml"
 alias rf "rd; and source ~/.config/fish/config.fish"
 
 setenv EDITOR hx
